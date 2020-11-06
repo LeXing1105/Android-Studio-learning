@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="category_analysisSpecs"
+        android:title="Recording Specifications">
+
+        <ListPreference
+            android:defaultValue="@string/pref_filter_default"
+            android:dialogTitle="@string/pref_filterChoose"
+            android:enabled="true"
+            android:entries="@array/pref_filter_entries"
+            android:entryValues="@array/pref_filter_values"
+            android:key="pref_filters"
+            android:selectable="true"
+            android:title="Filter" />
+
+        <ListPreference
+            android:defaultValue="250"
+            android:dialogTitle="Choose a Sampling Rate"
+            android:enabled="true"
+            android:entries="@array/pref_sr__entries"
+            android:entryValues="@array/pref_sr_values"
+            android:key="pref_sr"
+            android:selectable="true"
+            android:title="SamplingRate" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="category_artifacts"
+        android:title="Artefact Detection">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:enabled="true"
+            android:entries="@array/checkArtifacts_entries"
+            android:entryValues="@array/checkArtifacts_values"
+            android:key="checkArtifacts"
+            android:selectable="true"
+            android:title="Artifact Detection" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_training"
+        android:title="Training and Templates">
+
+        <ListPreference
+            android:defaultValue="10"
+            android:dialogTitle="How many training trials altogether?"
+            android:enabled="true"
+            android:entries="@array/pref_trials__entries"
+            android:entryValues="@array/pref_trials_values"
+            android:key="pref_trials"
+            android:selectable="true"
+            android:title="Training Trials altogether" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:enabled="true"
+            android:entries="@array/saveTemplates_entries"
+            android:entryValues="@array/saveTemplates_values"
+            android:key="saveTemplates"
+            android:selectable="true"
+            android:title="Save Templates to File" />
+
+        <EditTextPreference
+            android:dependency="saveTemplates"
+            android:key="subjectName"
+            android:summary="eg.: subj_01"
+            android:title="Enter Subject Name (no spaces)" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="category_communication"
+        android:title="Communication">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:enabled="true"
+            android:entries="@array/sendTemplates_entries"
+            android:entryValues="@array/sendTemplates_values"
+            android:key="sendOutTemplates"
+            android:selectable="true"
+            android:title="Send out generated Templates via TCP" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:enabled="true"
+            android:entries="@array/sendUDP_entries"
+            android:entryValues="@array/sendUDP_values"
+            android:key="sendUDPmessages"
+            android:selectable="true"
+            android:title="Send out UDP messages on Port 50008" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="category_channels"
+        android:title="Channel Selection">
+
+        <EditTextPreference
+            android:key="one"
+            android:summary="Enter Index Channel 1"
+            android:title="Channel 1" />
+
+        <EditTextPreference
+            android:key="two"
+            android:summary="Enter Index Channel 2"
+            android:title="Channel 2" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
