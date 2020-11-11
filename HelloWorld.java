@@ -1,8 +1,12 @@
 package com.example;
 
 
+import java.lang.reflect.Array;
 import java.security.KeyStore;
 import java.util.*;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class HelloWorld {
     public static void main(String[] args){
@@ -221,6 +225,7 @@ public class HelloWorld {
 
 
 
+        /*
 
         class Number{
             int number;
@@ -272,9 +277,70 @@ public class HelloWorld {
         }
 
 
+         */
 
 
 
+
+
+        /*
+        ArrayList arrayList = new ArrayList();
+        Random rand = new Random();
+        for (int i=0; i<3; i++){
+            arrayList.add(rand.nextInt(50));
+        }
+
+         */
+
+
+
+        /*
+        int[] array = new int[3];
+        try {
+            for (int i = 0; i < 5; i++) {
+                array[i] = i;
+            }
+        } catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("out of bound!");
+        } catch(Exception e){
+            System.out.println("e");
+        }
+        System.out.println(Arrays.toString(array));
+
+         */
+
+
+
+        //////advanced manipulation to Strings
+
+
+        String myString = "Nick x Mark x John x Bob";
+        String[] splitString = myString.split(" x ");
+        System.out.println(Arrays.toString(splitString));
+
+
+        String river = "MississippiMississippiMississippi";
+        String[] riverSpilt = river.split("s");
+        System.out.println(Arrays.toString(riverSpilt));
+        String riverPart = river.substring(1,8);   //the index of a string start from 0, the range of index includes the start index, and excludes the end index
+        System.out.println(riverPart);
+
+
+
+
+        String number1 = "<img class=\"lozad\" data-src=\"https://imgix.ranker.com/user_node_img/3103/62056554/original/ed-sheeran-photo-u15?fit=crop&amp;fm=pjpg&amp;q=60&amp;w=144&amp;h=144&amp;dpr=2\" alt=\"Ed Sheeran\" src=\"https://imgix.ranker.com/user_node_img/3103/62056554/original/ed-sheeran-photo-u15?fit=crop&amp;fm=pjpg&amp;q=60&amp;w=144&amp;h=144&amp;dpr=2\" data-loaded=\"true\">";
+
+        Pattern p = Pattern.compile("data-src=\"(.*?)\"");    //find the content from"Mi" to "Pi"
+        Matcher m = p.matcher(number1);
+        while(m.find()){
+            System.out.println(m.group(1));
+        }
+
+        p = Pattern.compile("alt=\"(.*?)\"");    //find the content from"Mi" to "Pi"
+        m = p.matcher(number1);
+        while(m.find()){
+            System.out.println(m.group(1));
+        }
     }
 
 }
