@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         String result = null;
         try {
-            result = task.execute("https://www.manchester.ac.uk/", "www.google.com").get();
+            result = task.execute("https://www.imdb.com/list/ls050274118/", "www.google.com").get();
 
         } catch(Exception e){
             e.printStackTrace();
@@ -72,6 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        
     }
 }
