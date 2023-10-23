@@ -1,4 +1,4 @@
 # Android-Studio-learning
-Udemy Online course Code
+This is my code when learning the Android Studio/Java, for creating different functions. 
 
-The Complete Android Oreo Developer Course - Build 23 Apps!
+"The Complete Android Oreo Developer Course - Build 23 Apps!"
